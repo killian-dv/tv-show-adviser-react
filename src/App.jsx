@@ -40,9 +40,12 @@ export function App() {
         }
     }, [currentTVShow])
 
-    // function setCurrentTVShowFromRecommendation(tvShow) {
-    //     alert(JSON.stringify(tvShow))
-    // }
+    async function searchTVShow(tvShowName) {
+        const searchResponse = await TVShowAPI.fetchByTitle(tvShowName);
+        if (searchResponse.length > 0) {
+          setCurrentTVShow(searchResponse[0]);
+        }
+      }
 
     // console.log(recommendationList)
     return (
@@ -58,7 +61,7 @@ export function App() {
                             <Logo image={logo} title="Watowatch" subtitle="Find a show you may like"/>
                         </div>
                         <div className="col-md-12 col-lg-4">
-                            <SearchBar />
+                            <SearchBar onSubmit={searchTVShow}/>
                         </div>
                     </div>
                 </div>
