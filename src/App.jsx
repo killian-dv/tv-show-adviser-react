@@ -4,6 +4,8 @@ import { TVShowDetail } from "./components/TVShowDetail/TVShowDetail"
 import "./global.css";
 import s from "./style.module.css";
 import { BACKDROP_BASE_URL } from "./config";
+import { Logo } from "./components/Logo/Logo";
+import logo from "./assets/images/logo.png"
 
 TVShowAPI.fetchPopulars()
 
@@ -33,8 +35,7 @@ export function App() {
                 <div className={s.header}>
                     <div className="row">
                         <div className="col-4">
-                            <div>Logo</div>
-                            <div>Subtitle</div>
+                            <Logo image={logo} title="Watowatch" subtitle="Find a show you may like"/>
                         </div>
                         <div className="col-md-12 col-lg-4">
                             <input style={{width : "100%"}} type="text"/>
