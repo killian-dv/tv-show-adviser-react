@@ -17,17 +17,27 @@ export function App() {
     const [recommendationList, setRecommendationList] = useState([])
 
     async function fetchPopulars(){
-        const populars = await TVShowAPI.fetchPopulars()
-        if (populars.length > 0) {
-            setCurrentTVShow(populars[0])
+        try {
+            const populars = await TVShowAPI.fetchPopulars()
+            if (populars.length > 0) {
+                setCurrentTVShow(populars[0])
+            }
+        } catch (error) {
+            alert("Erreur durant la recherche des séries populaires")
         }
+        
     }
 
     async function fetchRecommendations(tvShowId){
-        const recommendations = await TVShowAPI.fetchRecommendations(tvShowId)
-        if (recommendations.length > 0) {
-            setRecommendationList(recommendations.slice(0, 10))
+        try {
+            const recommendations = await TVShowAPI.fetchRecommendations(tvShowId)
+            if (recommendations.length > 0) {
+                setRecommendationList(recommendations.slice(0, 10))
+            }
+        } catch (error) {
+            alert("Erreur durant la recherche des séries recommandées")
         }
+        
     }
 
     useEffect(()=> {
@@ -41,10 +51,15 @@ export function App() {
     }, [currentTVShow])
 
     async function searchTVShow(tvShowName) {
-        const searchResponse = await TVShowAPI.fetchByTitle(tvShowName);
-        if (searchResponse.length > 0) {
-          setCurrentTVShow(searchResponse[0]);
+        try {
+            const searchResponse = await TVShowAPI.fetchByTitle(tvShowName);
+            if (searchResponse.length > 0) {
+            setCurrentTVShow(searchResponse[0]);
+            }
+        } catch (error) {
+            alert("Erreur durant la recherche de votre série")
         }
+        
       }
 
     // console.log(recommendationList)
