@@ -1,5 +1,5 @@
 .title {
-    font-weight: 400;
+    font-weight: 600;
     font-size: 35px;
 }
 
@@ -10,6 +10,7 @@
 .rating {
     margin-top: 2px;
     margin-left: 5px;
+    font-weight: 500;
 }
 
 .overview {

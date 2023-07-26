@@ -7,7 +7,7 @@ import { BACKDROP_BASE_URL } from "./config";
 import { Logo } from "./components/Logo/Logo";
 import logo from "./assets/images/logo.png"
 import { TVShowList } from "./components/TVShowList/TVShowList";
-
+import { SearchBar } from "./components/SearchBar/SearchBar";
 // TVShowAPI.fetchPopulars()
 // TVShowAPI.fetchRecommendations(1402)
 
@@ -58,7 +58,7 @@ export function App() {
                             <Logo image={logo} title="Watowatch" subtitle="Find a show you may like"/>
                         </div>
                         <div className="col-md-12 col-lg-4">
-                            <input style={{width : "100%"}} type="text"/>
+                            <SearchBar />
                         </div>
                     </div>
                 </div>
