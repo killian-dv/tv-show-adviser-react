@@ -1,5 +1,5 @@
 # Watowatch React App
-![Design preview](./src/assets/images/preview.png)
+![Design preview](./src/assets/images/preview_app.png)
 
 Voici mon premier projet React utilisant l'API [The Movie Database](https://developer.themoviedb.org/docs)"
 
