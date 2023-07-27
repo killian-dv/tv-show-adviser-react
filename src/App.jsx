@@ -11,6 +11,8 @@ import { SearchBar } from "./components/SearchBar/SearchBar";
 // TVShowAPI.fetchPopulars()
 // TVShowAPI.fetchRecommendations(1402)
 
+console.log(process.env.REACT_APP_API_KEY_PARAM)
+
 export function App() {
 
     const [currentTVShow, setCurrentTVShow] = useState()
